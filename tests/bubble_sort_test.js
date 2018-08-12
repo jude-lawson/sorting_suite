@@ -16,10 +16,14 @@ describe('Bubble Sort', () => {
   });
 
   it('should support sorting neighboring numbers that equal each other', () => {
-    // assert.deepEqual(bubbleSort([3,2,1,1]), [1,1,2,3]);
-    // assert.deepEqual(bubbleSort([2,1,1,3]), [1,1,2,3]);
-    // assert.deepEqual(bubbleSort([4,2,1,1,3]), [1,1,2,3,4]);
+    assert.deepEqual(bubbleSort([3,2,1,1]), [1,1,2,3]);
+    assert.deepEqual(bubbleSort([2,1,1,3]), [1,1,2,3]);
+    assert.deepEqual(bubbleSort([4,2,1,1,3]), [1,1,2,3,4]);
     assert.deepEqual(bubbleSort([1,1,3,2]), [1,1,2,3]);
+  });
+
+  it('should support negative numbers and zero', () => {
+    assert.deepEqual(bubbleSort([0, -1, 3, 2]), [-1, 0, 2, 3]);
   });
 
   it('should be able to sort a large and complex array', () => {
