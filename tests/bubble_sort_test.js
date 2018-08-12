@@ -22,7 +22,7 @@ describe('Bubble Sort', () => {
     assert.deepEqual(bubbleSort([1,1,3,2]), [1,1,2,3]);
   });
 
-  xit('should be able to sort a large and complex array', () => {
+  it('should be able to sort a large and complex array', () => {
     let largeAndComplexArray = [
       1, 234, 5, 7, 29, 0, 1, 87, 23, 54, 23, 12345, 1, 2, 3, 4, 5, 6, 7, 9, 10,
       4, 5, 6, 7, 8, 9, 1, 11, 12, 13, 14, 15, 16, 17, 21, 2, 22, 23, 24, 25, 26, 27, 28, 29, 30
