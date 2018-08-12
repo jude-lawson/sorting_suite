@@ -7,7 +7,11 @@ describe('Bubble Sort', () => {
     assert.deepEqual(bubbleSort([2,1]), [1,2])
   });
 
-  xit('should be able to sort an array sorted in descending order back to ascending order', () => {
+  it('should be able to sort a three item array', () => {
+    assert.deepEqual(bubbleSort([2,1,3]), [1,2,3]);
+  }); 
+
+  it('should be able to sort an array sorted in descending order back to ascending order', () => {
     assert.deepEqual(bubbleSort([4,3,2,1]), [1,2,3,4])
   });
 });

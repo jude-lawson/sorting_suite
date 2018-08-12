@@ -1,35 +1,35 @@
-const bubbleSort = (originalArr) => {
-  // let previousNumber = arr[previousIndex];
-  // let nextNumber = arr[nextIndex];
+const bubbleSort = (arr) => {
+  let result = swapIt(arr);
 
-  // console.log(arr);
-
-  // if (previousNumber > nextNumber) {
-  //   arr[previousIndex] = nextNumber;
-  //   arr[nextIndex] = previousNumber;
-  //   bubbleSort(arr);
-  // }
-
-  let result = sortIt(originalArr);
+  if (result[0] === true) {
+    bubbleSort(result[1]);
+  }
 
   console.log(result);
 
   return result[1];
 };
 
-function sortIt(arr, previousIndex = 0, nextIndex = 1) {
+function swapIt(arr, previousIndex = 0, nextIndex = 1) {
   let previousNumber = arr[previousIndex];
   let nextNumber = arr[nextIndex];
+  let wasSwapped;
 
+  console.log(previousIndex, nextIndex)
   console.log(arr);
 
-  if (previousNumber > nextNumber) {
+  if (previousNumber > nextNumber && (wasSwapped === true || wasSwapped === undefined)) {
+    wasSwapped = true;
     arr[previousIndex] = nextNumber;
     arr[nextIndex] = previousNumber;
-    sortIt(arr);
+    newPreviousIndex = previousIndex += 1;
+    newNextIndex = nextIndex += 1;
+    swapIt(arr, newPreviousIndex, newNextIndex);
+  } else {
+    wasSwapped = false;
   }
 
-  return [false, arr];
+  return [wasSwapped, arr];
 }
 
 module.exports = bubbleSort;
